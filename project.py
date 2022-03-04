@@ -51,9 +51,13 @@ def racecar_simulator(genomes, configurations):
     
     # Iteratively train agent using Deep RL
     for iteration, genome in genomes:
-        # TODO: What type of neural network is designed here? 
-        # TODO: Can we utilize more advanced neural networks instead?
-        # TODO: What is the tradeoff of using higher-order and/or lower-order networks? 
+        # What type of neural network is designed here? 
+        """A feedforward neural network."""
+        # Can we utilize more advanced neural networks instead?
+        """Yes, we could use a CNN, RNN, or any other more complex neural network model."""
+        # What is the tradeoff of using higher-order and/or lower-order networks? 
+        """Using a lower-order network results in a simpler and easier to manage design while 
+            a higher-order network is generally more efficient by eliminating parameters throughout the layers."""
         model = neat.nn.FeedForwardNetwork.create(genome, configurations)
         
         # Save instantiated models with (re)set genetic training counter
@@ -88,9 +92,14 @@ def racecar_simulator(genomes, configurations):
         for iteration, agent in enumerate(agents):
             output = models[iteration].activate(agent.get_actions())
             choice = output.index(max(output))
-            # TODO: Explain how policy selection works here – how are choices selected
-            #       across our reinforcement learning agent? What do those choices
-            #       actually do for our game-playing bot? 
+            # Explain how policy selection works here – how are choices selected
+            # across our reinforcement learning agent? What do those choices
+            # actually do for our game-playing bot? 
+            """The choices are selected through the agent's get_actions() function which
+                generates a Q-Table for evaluating our agent's choices.  The choice that
+                the agent chooses is determined by the which action has the highest Q-value
+                as represented by output.index(max(output)).  The choice is then mapped onto
+                the choices below: turning right/left or decelerating/acclerating"""
             if choice == 0:
                 agent.angle += 10
             elif choice == 1:

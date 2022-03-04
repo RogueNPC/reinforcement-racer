@@ -149,9 +149,12 @@ class CarAgent:
 
     def get_actions(self):
         """ Major method to obtain state action data for playing racecar simulation. """
-        # TODO: Our `actions` object is a deceptively important data
-        #       structures. Explain what this object represents and 
-        #       how this data is interpreted/used by our learning algorithm.
+        # Our `actions` object is a deceptively important data
+        # structures. Explain what this object represents and 
+        # how this data is interpreted/used by our learning algorithm.
+        """The actions object represents our Q-Table which is first initialized to 0, 
+            and then updated to reflect the values of our agent's radars.  The different
+            indexes of our actions object align with the different actions the agent can take."""
         radars, actions = self.radars, [0, 0, 0, 0, 0]
         for iteration, radar in enumerate(radars):
             actions[iteration] = int(radar[1] / 30)
