@@ -95,7 +95,7 @@ class CarAgent:
         # of basic algebra to complete the Euclidean distance
         # function algorithm below. (HINT: It's the basic 
         # distance function you learn in algebra!)
-        distance = math.sqrt((ΔX - X) ** 2 + (ΔY - Y) ** 2)
+        distance = math.sqrt(math.pow(ΔX - ΔY, 2))
         return distance
 
     def check_radar(self, degree, environment):
