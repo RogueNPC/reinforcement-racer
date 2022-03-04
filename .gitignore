@@ -5,3 +5,6 @@ assets/environments/map05.png
 # GARBAGE
 .DS_Store
 */.DS_Store
+
+/venv
+/structures/__pycache__
