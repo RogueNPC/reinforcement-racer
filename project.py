@@ -75,7 +75,7 @@ def racecar_simulator(genomes, configurations):
     alive_font = pygame.font.SysFont("Arial", 20)
 
     # Read in environment image map
-    environment = pygame.image.load("assets/environments/map01.png").convert()
+    environment = pygame.image.load("assets/environments/custom_map.png").convert()
 
     # Iterate generation counter as global variable 
     global current_generation
