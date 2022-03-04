@@ -52,12 +52,12 @@ def racecar_simulator(genomes, configurations):
     # Iteratively train agent using Deep RL
     for iteration, genome in genomes:
         # What type of neural network is designed here? 
-        """A feedforward neural network."""
+        """ A feedforward neural network. """
         # Can we utilize more advanced neural networks instead?
-        """Yes, we could use a CNN, RNN, or any other more complex neural network model."""
+        """ Yes, we could use a CNN, RNN, or any other more complex neural network model. """
         # What is the tradeoff of using higher-order and/or lower-order networks? 
-        """Using a lower-order network results in a simpler and easier to manage design while 
-            a higher-order network is generally more efficient by eliminating parameters throughout the layers."""
+        """ Using a lower-order network results in a simpler and easier to manage design while 
+            a higher-order network is generally more efficient by eliminating parameters throughout the layers. """
         model = neat.nn.FeedForwardNetwork.create(genome, configurations)
         
         # Save instantiated models with (re)set genetic training counter
@@ -95,11 +95,11 @@ def racecar_simulator(genomes, configurations):
             # Explain how policy selection works here – how are choices selected
             # across our reinforcement learning agent? What do those choices
             # actually do for our game-playing bot? 
-            """The choices are selected through the agent's get_actions() function which
+            """ The choices are selected through the agent's get_actions() method which
                 generates a Q-Table for evaluating our agent's choices.  The choice that
                 the agent chooses is determined by the which action has the highest Q-value
                 as represented by output.index(max(output)).  The choice is then mapped onto
-                the choices below: turning right/left or decelerating/acclerating"""
+                the choices below: turning right/left or decelerating/acclerating. """
             if choice == 0:
                 agent.angle += 10
             elif choice == 1:
@@ -111,8 +111,12 @@ def racecar_simulator(genomes, configurations):
                 agent.speed += 2
 
         # Check if RL Agent is alive and optimize rewarding schema
-        # TODO: Explain how the rewards are selected here – how is the 
-        #       rewarding schema related to the model's training fitness?
+        # Explain how the rewards are selected here – how is the 
+        # rewarding schema related to the model's training fitness?
+        """ The agent is rewarded whenever it survives an action determined by the if agent.is_alive():
+            statement.  The model's training fitness (genomes[iteration][1].fitness) is then updated 
+            by the reward amount calculated via the agent's get_rewards() method.  The model's
+            training fitness will continously obtain more rewards the longer the agent survives. """
         still_alive = 0
         for iteration, agent in enumerate(agents):
             if agent.is_alive():
