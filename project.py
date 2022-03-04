@@ -170,4 +170,4 @@ if __name__ == "__main__":
     population_statistics = neat.StatisticsReporter()
     population.add_reporter(population_statistics)
 
-    population.run(racecar_simulator, 1000)
+    population.run(racecar_simulator, 20)
