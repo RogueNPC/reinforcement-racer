@@ -1,0 +1,7 @@
+The NEAT algorithm operates in the same way as a Deep-Q Network (DQN) algorithm 
+however it utilizes NEAT to optimize and evolve the neural network structure.
+It still utilizes the same neural network application to approximate Q-values and 
+optimize the value function based on continous-state data. Theoretically, this 
+racecar driving game could be achieved to the same effectiveness using other
+Q-learning algorithms such as a normal DQN, Quantile-Regression-Based DQNs, or
+Hindsight Experience Replay Algorithms.
