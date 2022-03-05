@@ -99,7 +99,7 @@ def racecar_simulator(genomes, configurations):
                 generates a Q-Table for evaluating our agent's choices.  The choice that
                 the agent chooses is determined by the which action has the highest Q-value
                 as represented by output.index(max(output)).  The choice is then mapped onto
-                the choices below: turning right/left or decelerating/acclerating. """
+                the choices below: turning right/left or decelerating/accelerating. """
             if choice == 0:
                 agent.angle += 10
             elif choice == 1:
